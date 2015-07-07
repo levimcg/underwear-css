@@ -1,0 +1,22 @@
+{
+  "name": "underwear-css",
+  "version": "1.0.0",
+  "authors": [
+    "Levi McGranahan <levimcg@gmail.com>"
+  ],
+  "description": "A simple grid system for basic CSS layouts",
+  "main": "_underwear.scss",
+  "keywords": [
+    "grid",
+    "scss",
+    "layout"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
