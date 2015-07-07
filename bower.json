@@ -4,6 +4,11 @@
   "authors": [
     "Levi McGranahan <levimcg@gmail.com>"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/levimcg/underwear-css"
+  },
+  "homepage": "https://github.com/levimcg/underwear-css",
   "description": "A simple grid system for basic CSS layouts",
   "main": "_underwear.scss",
   "keywords": [
