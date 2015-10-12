@@ -22,7 +22,14 @@ $grid-gutters: 18px;
     &:before {
         content: "";
         display: block;
-        clear: both;
+        clear: both;    
+    }
+}
+
+/* Gets rid of left and right padding on grid units */
+.container--collapse {
+    .unit {
+        padding: $grid-gutters 0;
     }
 }
 
@@ -33,8 +40,8 @@ $grid-gutters: 18px;
     padding-bottom: $grid-gutters;
     float: left;
     -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
 
     &:after {
         content: "";
@@ -52,19 +59,16 @@ $grid-gutters: 18px;
     padding-top: 0;
     padding-bottom: 0;
 }
+
 /* Grid nesting */
 
-.unit > .container .unit {
+.container .container {
+    margin-right: -$grid-gutters;
+    margin-left: -$grid-gutters;
+}
+
+.unit .unit {
     padding-top: 0;
-    padding-bottom: 0;
-
-    &:first-child {
-        padding-left: 0;
-    }
-
-    &:last-child {
-        padding-right: 0;
-    }
 }
 
 .centered {
@@ -115,14 +119,14 @@ $grid-gutters: 18px;
 .four-fifths {
     width: 80%;
 }
-/* Push and pull classes */
 
-.push {
-    float: right;
+/* Push and pull classes */
+.push{
+  float: right;
 }
 
 .pull {
-    float: left;
+  float: left;
 }
 
 .container > .unit.pull {
@@ -134,8 +138,8 @@ $grid-gutters: 18px;
     padding-right: 0;
     padding-left: $grid-gutters !important;
 }
-/* List grid */
 
+/* List grid */
 ul.list-grid-fourths {
     display: block;
     list-style-type: none;
@@ -148,15 +152,15 @@ ul.list-grid-fourths {
         clear: both;
     }
 
-    li {
-        display: block;
-        float: left;
-        width: 25%;
-        padding: $grid-gutters;
-        -webkit-box-sizing: border-box;
-        -moz-box-sizing: border-box;
-        box-sizing: border-box;
-    }
+        li {
+            display: block;
+            float: left;
+            width: 25%;
+            padding: $grid-gutters;
+            -webkit-box-sizing: border-box;
+               -moz-box-sizing: border-box;
+                    box-sizing: border-box;
+        }
 }
 
 ul.list-grid-thirds {
@@ -171,15 +175,15 @@ ul.list-grid-thirds {
         clear: both;
     }
 
-    li {
-        display: block;
-        float: left;
-        width: 33.333333333333%;
-        padding: $grid-gutters;
-        -webkit-box-sizing: border-box;
-        -moz-box-sizing: border-box;
-        box-sizing: border-box;
-    }
+        li {
+            display: block;
+            float: left;
+            width: 33.333333333333%;
+            padding: $grid-gutters;
+            -webkit-box-sizing: border-box;
+               -moz-box-sizing: border-box;
+                    box-sizing: border-box;
+        }
 }
 
 ul.list-grid-half {
@@ -194,15 +198,15 @@ ul.list-grid-half {
         clear: both;
     }
 
-    li {
-        display: block;
-        float: left;
-        width: 50%;
-        padding: $grid-gutters;
-        -webkit-box-sizing: border-box;
-        -moz-box-sizing: border-box;
-        box-sizing: border-box;
-    }
+        li {
+            display: block;
+            float: left;
+            width: 50%;
+            padding: $grid-gutters;
+            -webkit-box-sizing: border-box;
+               -moz-box-sizing: border-box;
+                    box-sizing: border-box;
+        }
 }
 
 @media screen and (max-width: 768px) {
@@ -213,40 +217,15 @@ ul.list-grid-half {
         padding-bottom: $grid-gutters / 2;
     }
 
+    .unit .unit {
+        padding-top: $grid-gutters / 2;
+    }
+
     // Kill top padding on first nested unit to keep vertical spacing consistent
     .unit .container .unit:first-child {
         padding-top: 0;
     }
 
-    /*
-        May have fixed some of the grid nesting issues here?
-        Needs more testing.
-    */
-    .unit > .container .unit {
-        padding-top: $grid-gutters / 2;
-        padding-bottom: $grid-gutters / 2;
-        padding-left: 0;
-        padding-right: 0;
-
-        &:first-child {
-            padding-top: 0;
-            padding-right: 0;
-        }
-
-        &:last-child {
-            padding-bottom: 0;
-            padding-left: 0;
-        }
-    }
-
-    /* Gets rid of left and right padding on grid units */
-    .container--collapse {
-        
-        .unit {
-            padding: $grid-gutters 0;
-        }
-    }
-    
     /* Small grid - This will keep the proportions of the grid even on small devices */
     .container.small-grid .unit.half {
         width: 50%;
@@ -267,6 +246,7 @@ ul.list-grid-half {
         width: 25%;
         float: left;
     }
+
     .container.small-grid .unit.three-fourths {
         width: 75%;
         float: left;
@@ -291,8 +271,8 @@ ul.list-grid-half {
         width: 80%;
         float: left;
     }
-
-    .whole,
+    
+    .whole, 
     .half,
     .one-third,
     .two-thirds,
@@ -313,11 +293,9 @@ ul.list-grid-half {
     ul.list-grid-fourths,
     ul.list-grid-thirds,
     ul.list-grid-half {
-
         li {
             width: 100%;
             float: none;
         }
-
     }
 }
